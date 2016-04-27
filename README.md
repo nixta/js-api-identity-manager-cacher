@@ -69,7 +69,7 @@ The following properties are supported:
 | `autoLoad` | `true`  | Automatically find and load stored credentials during the `require` call. |
 | `autoSave` | `true`  | Automatically save credentials to local storage (falling back to a cookie) when the page unloads. |
 
-If you disabled `autoLoad` or `autoSave`, you can modify your `require` statement to get a handle to the IdCacher, which you'll need to hook up to for load and save functionality. 
+If you disabled `autoLoad` or `autoSave`, you can modify your `require` statement to get a handle to the IdCacher, which you'll need to hook up to for load and save functionality. The following functions are provided for manual control of credential storage.
 
 | Function                 | Usage                                                                                    |
 | ------------------------ | ---------------------------------------------------------------------------------------- |
@@ -81,7 +81,24 @@ If you disabled `autoLoad` or `autoSave`, you can modify your `require` statemen
 
 The singleton `esri/IdentityManager` is also exposed via the `identityManager` property on the IdCacher.
 
+Here's an example of explicitly loading credentials rather than relying on the auto-load.
+
 ```JavaScript
+<script type="text/javascript">
+var dojoConfig = {
+  packages: [
+  {
+    name: "identity-manager-cacher",
+    location: "http://nixta.github.io/js-api-identity-manager-cacher/lib/dojo"
+  }],
+  esriIdCacher: {
+    autoLoad: false
+  }
+};
+</script>
+
+<script src="http://js.arcgis.com/3.16compact/"></script>
+
 <script>
 var map;
 require(["esri/map",
@@ -93,7 +110,6 @@ require(["esri/map",
   	var credentialsFound = IdCacher.loadCredentials();
   	console.log("Found credentials? " + credentialsFound);
 ```
-
 
 ## Links & References
 
