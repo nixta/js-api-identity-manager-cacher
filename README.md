@@ -4,7 +4,7 @@ Caches ArcGIS JavaScript API credentials so you don't have to re-enter them on e
 
 This repo encapuslates the ArcGIS JavaScript API's sample found [here](https://developers.arcgis.com/javascript/jssamples/widget_identitymanager_client_side.html) into a simple-to-integrate AMD Loadable Dojo component. The sample is part of the 3.x samples, but this component works with 4.x and 3.x APIs.
 
-[Live 4.x Sample](http://nixta.github.io/js-api-identity-manager-cacher/samples/sample-4x.html) | [Live 3.x Sample](http://nixta.github.io/js-api-identity-manager-cacher/samples/sample-3x.html)
+[Live Sample](http://nixta.github.io/js-api-identity-manager-cacher/samples/sample-4x.html)
 
 
 ## Usage
@@ -46,15 +46,9 @@ The above example references the component hosted on GitHub. Note that GitHub ma
     location: location.pathname.replace(/\/[^/]+$/, "/") + "./js/4.x"
 ```
 
-### 3.X JavaScript API
-To use the component with the 3.x JavaScript API, simply modify the `location` property:
-
-``` JavaScript
-    location: "http://nixta.github.io/js-api-identity-manager-cacher/js/3.x"
-```
 
 ## Behavior
-By default, the component will load any saved credentials during the `require` and automatically save any credentials when the page unloads. It makes use of the `esri/identity/IdentityManager` to do so (see [here](https://developers.arcgis.com/javascript/latest/api-reference/esri-identity-IdentityManager.html)). For the 3.x JavaScript API, it uses the `esri/IdentityManager` (see [here](https://developers.arcgis.com/javascript/jsapi/identitymanager-amd.html))
+By default, the component will load any saved credentials during the `require` and automatically save any credentials when the page unloads. It makes use of the `esri/identity/IdentityManager` to do so (see [here](https://developers.arcgis.com/javascript/latest/api-reference/esri-identity-IdentityManager.html)).
 
 If you need to control when the component loads and saves credentials, see the configuration overrides below.
 
@@ -123,6 +117,19 @@ var dojoConfig = {
   	var credentialsFound = IdCacher.loadCredentials();
   	console.log("Found credentials? " + credentialsFound);
 ```
+
+
+## 3.X JavaScript API
+To use the component with the 3.x JavaScript API, simply modify the `location` property:
+
+``` JavaScript
+    location: "http://nixta.github.io/js-api-identity-manager-cacher/js/3.x"
+```
+
+[Live 3.x Sample](http://nixta.github.io/js-api-identity-manager-cacher/samples/sample-3x.html)
+
+For the 3.x JavaScript API, it uses the `esri/IdentityManager` (see [here](https://developers.arcgis.com/javascript/jsapi/identitymanager-amd.html))
+
 
 ## Links & References
 
