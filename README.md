@@ -2,7 +2,7 @@
 
 This repo encapuslates the ArcGIS JavaScript API's sample found [here](https://developers.arcgis.com/javascript/jssamples/widget_identitymanager_client_side.html) into a simple-to-integrate AMD Loadable Dojo component.
 
-[Live Sample](http://nixta.github.io/js-api-identity-manager-cacher/)
+[Live 4.0 Sample](http://nixta.github.io/js-api-identity-manager-cacher/samples/sample-4x.html) | [Live 3.x Sample](http://nixta.github.io/js-api-identity-manager-cacher/samples/sample-3x.html)
 
 
 ## Usage
@@ -18,31 +18,41 @@ var dojoConfig = {
   }]
 };
 </script>
+
+<script src="https://js.arcgis.com/4.0/"></script>
 ```
 
 Then simple reference the `cacher` in your Dojo `require` call:
 
 ``` JavaScript
-require(["esri/map",
-        "esri/layers/ArcGISDynamicMapServiceLayer",
-        "identity-manager-cacher/cacher",
-        "dojo/domReady!"],
-  function(Map, ArcGISDynamicMapServiceLayer) {
+<script>
+  require(["esri/Map",
+          "esri/views/SceneView",
+          "esri/layers/MapImageLayer",
+          "identity-manager-cacher/cacher",
+          "dojo/domReady!"],
+    function(Map, SceneView, MapImageLayer) {
   ...
 ```
 
 That's all you need to do by default.
 
 ### Hosting and Component Location
-In the above example, the component hosted on GitHub is referenced. Note that GitHub may rate limit you (or I might rename/move the repo) so it's better to host this yourself. To reference a file in a `dojo/lib` folder at the same location as your HTML file, use something like this:
+The above example references the component hosted on GitHub. Note that GitHub may rate limit you (or I might rename/move the repo) so it's better to host this yourself. To reference a file in a `js/4.x` folder at the same location as your HTML file, use something like this:
 
 ``` JavaScript
     location: location.pathname.replace(/\/[^/]+$/, "/") + "./js/4.x"
 ```
 
+### 3.X JavaScript API
+To use the component with the 3.x JavaScript API, simply modify the `location` property:
+
+``` JavaScript
+    location: "http://nixta.github.io/js-api-identity-manager-cacher/js/3.x"
+```
 
 ## Behavior
-By default, the component will load any saved credentials during the `require` and automatically save any credentials when the page unloads. It makes use of the `esri/IdentityManager` to do so (see [here](https://developers.arcgis.com/javascript/jsapi/identitymanager-amd.html)).
+By default, the component will load any saved credentials during the `require` and automatically save any credentials when the page unloads. It makes use of the `esri/identity/IdentityManager` to do so (see [here](https://developers.arcgis.com/javascript/latest/api-reference/esri-identity-IdentityManager.html)). For the 3.x JavaScript API, it uses the `esri/IdentityManager` (see [here](https://developers.arcgis.com/javascript/jsapi/identitymanager-amd.html))
 
 If you need to control when the component loads and saves credentials, see the configuration overrides below.
 
@@ -89,7 +99,7 @@ var dojoConfig = {
   packages: [
   {
     name: "identity-manager-cacher",
-    location: "http://githubroot.local/esri/js-api-identity-manager-cacher/js/4.x"
+    location: "http://nixta.github.io/js-api-identity-manager-cacher/js/4.x"
   }],
   esriIdCacher: {
     autoLoad: false
@@ -97,15 +107,16 @@ var dojoConfig = {
 };
 </script>
 
-<script src="http://js.arcgis.com/3.16compact/"></script>
+<script src="https://js.arcgis.com/4.0/"></script>
 
 <script>
-var map;
-require(["esri/map",
-        "esri/layers/ArcGISDynamicMapServiceLayer",
-        "identity-manager-cacher/cacher",
-        "dojo/domReady!"],
-  function(Map, ArcGISDynamicMapServiceLayer, IdCacher) {
+  var map, view;
+  require(["esri/Map",
+          "esri/views/SceneView",
+          "esri/layers/MapImageLayer",
+          "identity-manager-cacher/cacher",
+          "dojo/domReady!"],
+    function(Map, SceneView, MapImageLayer) {
 
   	var credentialsFound = IdCacher.loadCredentials();
   	console.log("Found credentials? " + credentialsFound);
@@ -113,9 +124,11 @@ require(["esri/map",
 
 ## Links & References
 
-* [Original JS API Sample](https://developers.arcgis.com/javascript/jssamples/widget_identitymanager_client_side.html).
-* `esri/IdentityManager` [reference](https://developers.arcgis.com/javascript/jsapi/identitymanager-amd.html).
-* [Live example](http://nixta.github.io/js-api-identity-manager-cacher/).
+* [Original 3.x JS API Sample](https://developers.arcgis.com/javascript/jssamples/widget_identitymanager_client_side.html).
+* `esri/identity/IdentityManager` [reference](https://developers.arcgis.com/javascript/latest/api-reference/esri-identity-IdentityManager.html)
+* 3.x `esri/IdentityManager` [reference](https://developers.arcgis.com/javascript/jsapi/identitymanager-amd.html).
+* [Live 4.0 Sample](http://nixta.github.io/js-api-identity-manager-cacher/samples/sample-4x.html).
+* [Live 3.x Sample](http://nixta.github.io/js-api-identity-manager-cacher/samples/sample-3x.html).
 
 
 ## Licensing
