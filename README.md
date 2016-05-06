@@ -119,8 +119,8 @@ var dojoConfig = {
 ```
 
 
-## 3.X JavaScript API
-To use the component with the 3.x JavaScript API, simply modify the `location` property:
+## 3.x JavaScript API
+To use the component with the 3.x JavaScript API, simply modify the `location` property to replace `4.x` with `3.x`:
 
 ``` JavaScript
     location: "http://nixta.github.io/js-api-identity-manager-cacher/js/3.x"
@@ -128,7 +128,7 @@ To use the component with the 3.x JavaScript API, simply modify the `location` p
 
 [Live 3.x Sample](http://nixta.github.io/js-api-identity-manager-cacher/samples/sample-3x.html)
 
-For the 3.x JavaScript API, it uses the `esri/IdentityManager` (see [here](https://developers.arcgis.com/javascript/jsapi/identitymanager-amd.html))
+For the 3.x JavaScript API, the component uses the `esri/IdentityManager` (see [here](https://developers.arcgis.com/javascript/jsapi/identitymanager-amd.html))
 
 
 ## Links & References
