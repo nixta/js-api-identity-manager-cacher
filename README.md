@@ -1,8 +1,10 @@
 # ArcGIS JS API Credential Caching
 
-This repo encapuslates the ArcGIS JavaScript API's sample found [here](https://developers.arcgis.com/javascript/jssamples/widget_identitymanager_client_side.html) into a simple-to-integrate AMD Loadable Dojo component.
+Caches ArcGIS JavaScript API credentials so you don't have to re-enter them on every refresh.
 
-[Live 4.0 Sample](http://nixta.github.io/js-api-identity-manager-cacher/samples/sample-4x.html) | [Live 3.x Sample](http://nixta.github.io/js-api-identity-manager-cacher/samples/sample-3x.html)
+This repo encapuslates the ArcGIS JavaScript API's sample found [here](https://developers.arcgis.com/javascript/jssamples/widget_identitymanager_client_side.html) into a simple-to-integrate AMD Loadable Dojo component. The sample is part of the 3.x samples, but this component works with 4.x and 3.x APIs.
+
+[Live 4.x Sample](http://nixta.github.io/js-api-identity-manager-cacher/samples/sample-4x.html) | [Live 3.x Sample](http://nixta.github.io/js-api-identity-manager-cacher/samples/sample-3x.html)
 
 
 ## Usage
@@ -127,7 +129,7 @@ var dojoConfig = {
 * [Original 3.x JS API Sample](https://developers.arcgis.com/javascript/jssamples/widget_identitymanager_client_side.html).
 * `esri/identity/IdentityManager` [reference](https://developers.arcgis.com/javascript/latest/api-reference/esri-identity-IdentityManager.html)
 * 3.x `esri/IdentityManager` [reference](https://developers.arcgis.com/javascript/jsapi/identitymanager-amd.html).
-* [Live 4.0 Sample](http://nixta.github.io/js-api-identity-manager-cacher/samples/sample-4x.html).
+* [Live 4.x Sample](http://nixta.github.io/js-api-identity-manager-cacher/samples/sample-4x.html).
 * [Live 3.x Sample](http://nixta.github.io/js-api-identity-manager-cacher/samples/sample-3x.html).
 
 
