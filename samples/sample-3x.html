@@ -9,21 +9,21 @@
   <link rel="stylesheet" href="https://js.arcgis.com/3.16/esri/themes/calcite/esri/esri.css">
   <link rel="stylesheet" href="https://js.arcgis.com/3.16/esri/css/esri.css">
   <style>
-    html,body,#mapDiv {
-      padding:0;
-      margin:0;
-      height:100%;
+    html, body, #mapDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
     }
   </style>
 
   <script type="text/javascript">
-  var dojoConfig = {
-  	packages: [
-  	{
-  		name: "identity-manager-cacher",
-      location: "http://nixta.github.io/js-api-identity-manager-cacher/js/3.x"
-  	}]
-  };
+    var dojoConfig = {
+    	packages: [
+    	{
+    		name: "identity-manager-cacher",
+        location: "http://nixta.github.io/js-api-identity-manager-cacher/js/3.x"
+    	}]
+    };
   </script>
 
   <script src="http://js.arcgis.com/3.16compact/"></script>
@@ -31,9 +31,9 @@
   <script>
     var map;
     require(["esri/map",
-            "esri/layers/ArcGISDynamicMapServiceLayer",
-            "identity-manager-cacher/cacher",
-            "dojo/domReady!"],
+             "esri/layers/ArcGISDynamicMapServiceLayer",
+             "identity-manager-cacher/cacher",
+             "dojo/domReady!"],
       function(Map, ArcGISDynamicMapServiceLayer) {
     		map = new Map("mapDiv", {
     			center: [-122.68, 45.52],
