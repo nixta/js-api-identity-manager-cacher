@@ -14,7 +14,7 @@ var dojoConfig = {
   packages: [
   {
     name: "identity-manager-cacher",
-    location: "http://nixta.github.io/js-api-identity-manager-cacher/lib/dojo"
+    location: "http://nixta.github.io/js-api-identity-manager-cacher/js/4.x"
   }]
 };
 </script>
@@ -37,7 +37,7 @@ That's all you need to do by default.
 In the above example, the component hosted on GitHub is referenced. Note that GitHub may rate limit you (or I might rename/move the repo) so it's better to host this yourself. To reference a file in a `dojo/lib` folder at the same location as your HTML file, use something like this:
 
 ``` JavaScript
-    location: location.pathname.replace(/\/[^/]+$/, "/") + "./lib/dojo"
+    location: location.pathname.replace(/\/[^/]+$/, "/") + "./js/4.x"
 ```
 
 
@@ -89,7 +89,7 @@ var dojoConfig = {
   packages: [
   {
     name: "identity-manager-cacher",
-    location: "http://nixta.github.io/js-api-identity-manager-cacher/lib/dojo"
+    location: "http://githubroot.local/esri/js-api-identity-manager-cacher/js/4.x"
   }],
   esriIdCacher: {
     autoLoad: false
