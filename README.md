@@ -2,7 +2,7 @@
 
 Caches ArcGIS JavaScript API credentials so you don't have to re-enter them on every refresh.
 
-This repo encapuslates the ArcGIS JavaScript API's sample found [here](https://developers.arcgis.com/javascript/jssamples/widget_identitymanager_client_side.html) into a simple-to-integrate AMD Loadable Dojo component. The sample is part of the 3.x samples, but this component works with 4.x and 3.x APIs.
+This repo encapuslates the ArcGIS JavaScript API's sample found [here](https://developers.arcgis.com/javascript/jssamples/widget_identitymanager_client_side.html) into a simple-to-integrate AMD Loadable Dojo component. The original code is part of the 3.x samples, but this component works with 4.x and 3.x APIs.
 
 [Live Sample](http://nixta.github.io/js-api-identity-manager-cacher/samples/sample-4x.html)
 
@@ -13,8 +13,7 @@ To use, simply add a `<script>` tag *before* you reference the JS API to let the
 ``` JavaScript
 <script type="text/javascript">
 var dojoConfig = {
-  packages: [
-  {
+  packages: [{
     name: "identity-manager-cacher",
     location: "http://nixta.github.io/js-api-identity-manager-cacher/js/4.x"
   }]
@@ -24,7 +23,7 @@ var dojoConfig = {
 <script src="https://js.arcgis.com/4.0/"></script>
 ```
 
-Then simple reference the `cacher` in your Dojo `require` call:
+Then just reference the `cacher` in your Dojo `require` call:
 
 ``` JavaScript
 <script>
@@ -92,8 +91,7 @@ Here's an example of explicitly loading credentials rather than relying on the a
 ```JavaScript
 <script type="text/javascript">
 var dojoConfig = {
-  packages: [
-  {
+  packages: [{
     name: "identity-manager-cacher",
     location: "http://nixta.github.io/js-api-identity-manager-cacher/js/4.x"
   }],
